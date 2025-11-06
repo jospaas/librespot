@@ -14,14 +14,14 @@ pub struct NoOpMixer {
 }
 
 impl Mixer for NoOpMixer {
-    fn open(config: MixerConfig) -> Self {
+    fn open(config: MixerConfig) -> Result<Self, Error>  {
         let volume_ctrl = config.volume_ctrl;
         info!("Mixing with NoOp mixer");
 
-        Self {
+        Ok(Self {
             volume: Arc::new(AtomicU64::new(f64::to_bits(0.5))),
             volume_ctrl,
-        }
+        })
     }
 
     fn volume(&self) -> u16 {

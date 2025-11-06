@@ -2,6 +2,7 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
 
 use super::VolumeGetter;
+use librespot_core::Error;
 use super::{MappedCtrl, VolumeCtrl};
 use super::{Mixer, MixerConfig};
 

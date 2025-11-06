@@ -22,7 +22,7 @@ jobs:
 
     - name: Build x86_64
       run: |
-        cargo build --release --target=x86_64-unknown-linux-gnu
+        cargo build --release --target=x86_64-unknown-linux-gnu --no-default-features --features "rustls-tls with-libmdns"
         cp target/x86_64-unknown-linux-gnu/release/librespot releases/linux/librespot-linux-x86_64
         chmod +x releases/linux/librespot-linux-x86_64
 

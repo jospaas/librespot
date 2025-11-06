@@ -339,7 +339,7 @@ async fn get_setup() -> Setup {
     // Options that have different descriptions
     // depending on what backends were enabled at build time.
     #[cfg(feature = "alsa-backend")]
-    const MIXER_TYPE_DESC: &str = "Mixer to use {alsa|softvol}. Defaults to softvol.";
+    const MIXER_TYPE_DESC: &str = "Mixer to use {alsa|softvol|noop}. Defaults to softvol.";
     #[cfg(not(feature = "alsa-backend"))]
     const MIXER_TYPE_DESC: &str = "Not supported by the included audio backend(s).";
     #[cfg(any(

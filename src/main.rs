@@ -896,10 +896,10 @@ async fn get_setup() -> Setup {
         }
     }
 
-    #[cfg(feature = "alsa-backend")]
+    //#[cfg(feature = "alsa-backend")]
     let mixer_type = opt_str(MIXER_TYPE);
-    #[cfg(not(feature = "alsa-backend"))]
-    let mixer_type: Option<String> = None;
+    //#[cfg(not(feature = "alsa-backend"))]
+    //let mixer_type: Option<String> = None;
 
     let mixer = mixer::find(mixer_type.as_deref()).unwrap_or_else(|| {
         invalid_error_msg(
